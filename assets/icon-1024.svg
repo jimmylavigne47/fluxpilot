@@ -1,0 +1,20 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="fp-bg" x1="0" y1="0" x2="1024" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0D1220"/>
+      <stop offset="100%" stop-color="#0B0E14"/>
+    </linearGradient>
+    <linearGradient id="fp-icon" x1="200" y1="200" x2="824" y2="824" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00D4FF"/>
+      <stop offset="100%" stop-color="#7C6FFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" rx="220" fill="url(#fp-bg)"/>
+  <circle cx="512" cy="460" r="290" stroke="url(#fp-icon)" stroke-width="20" stroke-dasharray="1280 460" stroke-linecap="round" fill="none"/>
+  <circle cx="512" cy="460" r="200" stroke="url(#fp-icon)" stroke-width="14" stroke-dasharray="880 540" stroke-linecap="round" fill="none" opacity="0.45" transform="rotate(145 512 460)"/>
+  <path d="M340 600 L512 280 L684 600" stroke="url(#fp-icon)" stroke-width="38" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="512" cy="280" r="36" fill="#00D4FF" opacity="0.9"/>
+  <circle cx="512" cy="280" r="52" fill="#00D4FF" opacity="0.12"/>
+  <text x="512" y="810" font-family="Space Grotesk, sans-serif" font-size="96" font-weight="700" fill="#00D4FF" text-anchor="middle" letter-spacing="-2">Flux</text>
+  <text x="512" y="910" font-family="Space Grotesk, sans-serif" font-size="96" font-weight="700" fill="#E8EAF0" text-anchor="middle" letter-spacing="-2">Pilot</text>
+</svg>
