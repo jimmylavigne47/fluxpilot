@@ -8,15 +8,18 @@
 <link rel="icon" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<canvas id="bg-orb" aria-hidden="true"></canvas>
+<div class="scanlines" aria-hidden="true"></div>
+
 <header>
   <div class="wrap nav">
-    <a href="./" aria-label="FluxPilot">
-      <svg width="176" height="32" viewBox="0 0 220 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <a class="brand-tag" href="./" aria-label="FluxPilot">
+      <svg width="170" height="30" viewBox="0 0 220 40" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="fp-wlg" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
             <stop offset="0%" stop-color="#FF7A1A"/><stop offset="100%" stop-color="#FFC24D"/>
@@ -30,10 +33,10 @@
         <text x="100" y="26" font-family="'Space Grotesk',sans-serif" font-size="20" font-weight="700" fill="#F3F5F8" letter-spacing="-0.3">Pilot</text>
       </svg>
     </a>
+    <span class="status-pill"><span class="dot"></span>Système en ligne · build in public</span>
     <nav class="nav-links">
       <a href="#approche" class="nav-approche">L'approche</a>
-      <a href="#newsletter">Newsletter</a>
-      <a class="btn" href="#newsletter">Suivre les builds</a>
+      <a class="btn btn-ghost btn-sm" href="#newsletter">Suivre les builds</a>
     </nav>
   </div>
 </header>
@@ -41,12 +44,17 @@
 <main>
   <section class="hero">
     <div class="wrap">
-      <span class="eyebrow"><span class="dot-pulse"></span>Build in public · wins &amp; losses</span>
+      <span class="eyebrow"><span class="dot-pulse"></span>FluxPilot · opération revenus autonome</span>
       <h1>Je construis une machine à cash avec l'IA. <span class="grad">En public.</span></h1>
       <p class="sub">Chaque workflow, chaque euro, chaque plantage — documentés en temps réel. Wins et losses compris. Pas un guru qui vend du rêve&nbsp;: un builder que tu regardes construire, pour de vrai.</p>
       <div class="cta-row">
         <a class="btn" href="#newsletter">Reçois les builds par mail</a>
         <a class="btn btn-ghost" href="#approche">Voir l'approche</a>
+      </div>
+      <div class="readout">
+        <span class="chip"><span class="k">REVENU</span> <b>0 €</b> · jour 0</span>
+        <span class="chip"><span class="k">PILOTAGE</span> <b>95 % agents IA</b></span>
+        <span class="chip cy"><span class="k">STATUT</span> <b>EN DIRECT</b></span>
       </div>
     </div>
   </section>
@@ -54,37 +62,34 @@
   <section class="block" id="approche">
     <div class="wrap">
       <div class="section-head">
-        <h2>Ce que tu trouves ici</h2>
-        <p>Pas de théorie creuse, pas de promesse floue sur la liberté financière. Des systèmes réels, documentés étape par étape.</p>
+        <span class="label">// ce que tu trouves ici</span>
+        <h2>Des systèmes réels, pas de la théorie</h2>
+        <p>Zéro promesse floue sur la liberté financière. Des builds documentés étape par étape, chiffres à l'appui.</p>
       </div>
       <div class="cards">
-        <div class="card">
+        <div class="panel">
           <div class="ico">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
-              <path d="M19.622 10.395l-1.097-2.65L20 6l-2-2-1.735 1.483-2.707-1.113L12.935 2h-1.954l-.632 2.401-2.645 1.115L6 4 4 6l1.453 1.789-1.08 2.657L2 11v2l2.401.655L5.516 16.3 4 18l2 2 1.791-1.46 2.669 1.072L11 22h2l.641-2.41 2.662-1.136L18 20l2-2-1.464-1.803 1.087-2.668L22 13v-2l-2.378-.605Z"/>
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M19.6 10.4l-1.1-2.7L20 6l-2-2-1.7 1.5-2.7-1.1L12.9 2h-2l-.6 2.4-2.6 1.1L6 4 4 6l1.5 1.8-1.1 2.6L2 11v2l2.4.7L5.5 16.3 4 18l2 2 1.8-1.5 2.7 1.1L11 22h2l.6-2.4 2.7-1.1L18 20l2-2-1.5-1.8 1.1-2.7L22 13v-2z"/>
             </svg>
           </div>
           <h3>Des builds réels</h3>
           <p>De vrais systèmes d'IA et d'automatisation, montés en direct. Tu vois le stack, les chiffres, et ce qui casse.</p>
         </div>
-        <div class="card">
+        <div class="panel">
           <div class="ico">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M12 2L2 7l10 5 10-5-10-5Z"/>
-              <path d="M2 17l10 5 10-5"/>
-              <path d="M2 12l10 5 10-5"/>
+              <path d="M12 2L2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
             </svg>
           </div>
-          <h3>Le stack, à découvert</h3>
+          <h3>Le stack à découvert</h3>
           <p>Les vrais outils que j'utilise dans le build, montrés sans filtre. Pas de méthode miracle à te vendre.</p>
         </div>
-        <div class="card">
+        <div class="panel">
           <div class="ico">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M18 20V10"/>
-              <path d="M12 20V4"/>
-              <path d="M6 20v-6"/>
+              <path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/>
             </svg>
           </div>
           <h3>Zéro hype, que du concret</h3>
@@ -94,9 +99,10 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" id="newsletter">
     <div class="wrap">
-      <div class="news" id="newsletter">
+      <div class="panel news">
+        <span class="label">// canal direct</span>
         <h2>Suis le build, garde une longueur d'avance</h2>
         <p>Les systèmes, les vrais chiffres et les plantages — directement dans ta boîte mail. Gratuit, désinscription en un clic.</p>
         <a class="btn" href="https://jimmys-newsletter-4930be.beehiiv.com/subscribe">M'inscrire à la newsletter</a>
@@ -106,15 +112,23 @@
 </main>
 
 <footer>
-  <div class="wrap foot">
-    <span class="copy">© 2026 FluxPilot. Tous droits réservés.</span>
-    <nav class="foot-links">
-      <a href="terms.html">Conditions d'utilisation</a>
-      <a href="privacy.html">Politique de confidentialité</a>
-      <a href="mailto:contact.fluxpilot@gmail.com">Contact</a>
-    </nav>
+  <div class="wrap">
+    <div class="foot">
+      <span class="copy">© 2026 FluxPilot — build by Jimmy</span>
+      <nav class="foot-links">
+        <a href="terms.html">Conditions d'utilisation</a>
+        <a href="privacy.html">Confidentialité</a>
+        <a href="mailto:contact.fluxpilot@gmail.com">Contact</a>
+      </nav>
+    </div>
+    <div class="channels">
+      <i><b class="c-or"></b>IA &amp; Automatisation</i>
+      <i><b class="c-cy"></b>Build in public</i>
+      <i><b class="c-gr"></b>Wins &amp; losses</i>
+    </div>
   </div>
 </footer>
 
+<script src="orb.js" defer></script>
 </body>
 </html>
